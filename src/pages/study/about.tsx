@@ -6,7 +6,7 @@ export default class About extends React.Component {
     return (
       <div>
         <p>About</p>
-        <Link href={`/`}><a>Home</a></Link>
+        <Link href={`/study`}><a>Home</a></Link>
       </div>
     )
   }
