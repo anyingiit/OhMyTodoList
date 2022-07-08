@@ -11,7 +11,7 @@ export default class Index extends React.Component {
         <p>Welcome to Next.js!</p>
         <Link href={`/about`}><a>About</a></Link>
         <br/>
-        <Image src={`/favicon.ico`} width={16} height={16}></Image>
+        <Image src={`/test_photo.png`} width={327} height={450}></Image>
         <SayHello/>
         <StateTest/>
       </div>
