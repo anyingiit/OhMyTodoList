@@ -1,12 +1,25 @@
 import React from "react";
-import {AppProps} from "next/app";
+import {GetServerSideProps} from "next";
 
-export default class Index extends React.Component<AppProps, any> {
+interface Props {
+  abc: boolean
+}
+
+export default class Index extends React.Component<Props, any> {
   render() {
     return (
       <div>
-        hello world!
+        <div>hello world!</div>
+        <div>{this.props.abc ? 'true' : 'false'}</div>
       </div>
     );
+  }
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return {
+    props: {
+      abc: true
+    } as Props
   }
 }
