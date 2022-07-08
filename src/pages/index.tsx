@@ -14,6 +14,7 @@ export default class Index extends React.Component {
         <Image src={`/test_photo.png`} width={327} height={450}></Image>
         <SayHello/>
         <StateTest/>
+        <h1 className={`text-3xl font-bold underline`}>Hello Tailwindcss!</h1>
       </div>
     )
   }
