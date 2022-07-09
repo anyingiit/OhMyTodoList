@@ -44,3 +44,10 @@
     1. 如果是本地文件, 考虑使用`require`引入图片, 并且`next`会自动设置其宽高为实际宽高
     2. 如果是远程文件, 必须在其添加两个标签属性`width`, `height`以确定其宽高
     3. 如果图片大小不确定, 或者想要通过css控制图片大小, `必须在外侧包括一层盒子, 并且其必须为position: relative;`
+4. 关于开发过程中遇到的问题
+    1. `Warning: Function components cannot be given refs`
+        1. 原因: 使用`<Link></Link>`组件时, 子节点不是`<a></a>`
+        2. 解决: 子节点使用`<a></a>`即可, 如果有其他子节点, 请作为`<a></a>`的子节点即可
+    2. `FExtra attributes from the server: control-id`
+        1. 原因: 浏览器的其他插件影响的
+        2. 解决: 开隐私模式即可
