@@ -15,6 +15,7 @@ interface Props {
 // List: 可以显示Todo的列表
 export default class List extends React.Component<Props, any> {
   render() {
+    // console.log('List render: this.props', this.props)
     return (
       <div>
         {
@@ -26,9 +27,8 @@ export default class List extends React.Component<Props, any> {
                     <input
                       className={`h-8 w-8`}
                       type={`checkbox`}
-                      defaultChecked={item.completed}
-                      onChange={(event) => {
-                        console.log(this)
+                      checked={item.completed} // 注意: 记录一个奇怪的bug, 此处千万不能使用`defaultChecked`属性作为设想中的那样去使用, 即预想为默认属性, 这会导致页面出现非常奇怪的bug, 比如说渲染时其他的地方都渲染了, 只有input框不会渲染, 只有刷新页面后才能解决这个问题, 其他页面导航过来到当前页面会100%触发该bug
+                      onChange={(event) => { //TODO: 应当把控制权移交出去
                         console.log({userId: item.userId, id: item.id, newCompleteState: event.target.checked})
                       }}/>
                   </div>
