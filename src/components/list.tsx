@@ -37,7 +37,7 @@ export default class List extends React.Component<Props, any> {
                 </label>
                 <div
                   className={`float-right h-full flex items-center content-center ${this.props.showAvatarIcon ? `block` : 'hidden'}`}>
-                  <UserAvatar username={item.userName} width={8} height={8} href={'/'}
+                  <UserAvatar username={item.userName} width={8} height={8} href={`/todos/${item.userId}`}
                               textColor={'black'}
                               borderColor={`blue`}/>
                 </div>
