@@ -1,5 +1,5 @@
 import React from "react";
-import UserAvatar from "../userAvatar";
+import UserAvatar from "./userAvatar";
 
 interface Props {
   data: {
@@ -9,9 +9,10 @@ interface Props {
     userId: number,
     userName: string
   }[],
-  showAvatarIcon: boolean
+  showAvatarIcon: boolean // 每个任务后方是否显示创建者
 }
 
+// List: 可以显示Todo的列表
 export default class List extends React.Component<Props, any> {
   render() {
     return (

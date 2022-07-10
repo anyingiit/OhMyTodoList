@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import UserAvatar from "../userAvatar";
+import UserAvatar from "./userAvatar";
 
 interface Props {
   userInfo?: {
@@ -9,6 +9,7 @@ interface Props {
   }
 }
 
+// Header: 所有页面的Header, 可以控制是否显示用户头像
 export default class Header extends React.Component<Props, any> {
   render() {
     return (
