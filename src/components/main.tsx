@@ -34,15 +34,16 @@ interface Props {
 
 // Main: 一个TodoList的模板页面
 export default class Main extends React.Component<Props, any> {
-  state = {isOpenMenu: true}
+  state = {isOpenMenu: false}
 
   changeOpenMenuState = () => {
     const isOpenMenu = this.state.isOpenMenu
     this.setState({isOpenMenu: !isOpenMenu})
-    console.log('onclick')
+    // console.log('onclick')
   }
 
   render() {
+    // console.log('main render: this.props', this.props)
     return (
       <div className={`relative`}>
         <Header userInfo={this.props.curUserInfo}/>
