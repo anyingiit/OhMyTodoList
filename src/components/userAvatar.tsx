@@ -10,6 +10,7 @@ interface Props {
   borderColor: string
 }
 
+// UserAvatar: 用户名组成的用户头像的封装, 无状态组件. 由外部控制: 用户名, 宽度, 高度, 点击后跳转的导航页面, 字体颜色, 边框颜色
 export default class UserAvatar extends React.Component<Props, any> {
   render() {
     return (
