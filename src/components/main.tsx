@@ -60,10 +60,13 @@ export default class Main extends React.Component<Props, any> {
             />
           </div>
         </div>
-        <List
-          data={this.props.todoListData}
-          showAvatarIcon={this.props.showTodoAvatar}
-        />
+        <div className={`w-full h-full mt-16`}>
+          <List
+            data={this.props.todoListData}
+            showAvatarIcon={this.props.showTodoAvatar}
+            completeStateChange={this.props.todoCompleteStateChange}
+          />
+        </div>
       </div>
     );
   }
