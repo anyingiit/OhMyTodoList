@@ -13,10 +13,6 @@ interface Props {
     userName: string
   }[],
   showTodoAvatar: boolean, // 每个任务后是否显示Todo创建者头像
-  curUserInfo?: { // 当传入时, 会在Header中显示用户头像, 主要用于用户登录后显示已登录的用户的头像
-    id: number,
-    username: string
-  },
   todoListTask: { // 该页面可以执行的任务
     name: string,
     iconSrc: string,
@@ -29,6 +25,41 @@ interface Props {
       iconSrc: string,
       href: string
     }[]
+  },
+  /**
+   * 当某个Todo状态更改时会调用该动作
+   * @param index 触发更改的元素下标(根据this.props.todoListData)
+   * @param newState 更改后的最新状态
+   */
+  todoCompleteStateChange: (index: number, newState: boolean) => void,
+  /**
+   * header数据
+   */
+  headerData: {
+    /**
+     * 左侧数据信息
+     */
+    data: {
+      /**
+       * 可选, 当不传是默认为`To Do`
+       */
+      title?: string,
+      /**
+       * 点击后导航到哪
+       */
+      href: string,
+    },
+    /**
+     * 右侧头像的数据, 当值为undefined时代表不显示头像
+     */
+    userAvatarData: {
+      username: string,
+      id: number,
+      /**
+       * 点击后导航到哪
+       */
+      href: string
+    } | undefined
   }
 }
 
@@ -46,7 +77,10 @@ export default class Main extends React.Component<Props, any> {
     // console.log('main render: this.props', this.props)
     return (
       <div className={`relative`}>
-        <Header userInfo={this.props.curUserInfo}/>
+        <Header
+          data={this.props.headerData.data}
+          userAvatarData={this.props.headerData.userAvatarData}
+        />
         <div className={`w-full absolute ${this.state.isOpenMenu ? `h-full` : ``}`}>
           <Nav
             title={this.props.navData.title} shortCuts={this.props.navData.shortCuts}
