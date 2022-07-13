@@ -25,3 +25,7 @@ yarn build
     - [ ] 使用UML绘制
 - [ ] 页面组成是什么
 - [ ] 项目目录结构是什么
+
+### Notes
+
+[studyNotes](studyNotes.md)
