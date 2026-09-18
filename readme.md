@@ -1,33 +1,64 @@
-[![wakatime](https://wakatime.com/badge/user/8962de91-9fea-4e00-939e-6117cafe1eb2/project/6915ed0a-bcb6-4aa4-91ce-6f06085d77d7.svg)](https://wakatime.com/badge/user/8962de91-9fea-4e00-939e-6117cafe1eb2/project/6915ed0a-bcb6-4aa4-91ce-6f06085d77d7)
+<!-- Source: Best-README-Template BLANK_README (Unlicense) — https://github.com/othneildrew/Best-README-Template -->
+<a id="readme-top"></a>
 
-# Oh! My Todo List
+# OhMyTodoList
 
-## 开发与构建
+Oh my todo list has no README describing its purpose; its manifest (package.json, tsconfig.json, yarn.lock) marks it as a Node.js and TypeScript codebase, built with TypeScript.
 
-### 开发
+[![CI](https://github.com/anyingiit/OhMyTodoList/actions/workflows/ci.yml/badge.svg)](https://github.com/anyingiit/OhMyTodoList/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/anyingiit/OhMyTodoList)](LICENSE)
 
-```shell
-yarn install
-yarn dev
-yarn test
+[Report a bug](https://github.com/anyingiit/OhMyTodoList/issues/new?template=bug_report.yml) · [Request a feature](https://github.com/anyingiit/OhMyTodoList/issues/new?template=feature_request.yml)
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+## About The Project
+
+Oh my todo list has no README describing its purpose; its manifest (package.json, tsconfig.json, yarn.lock) marks it as a Node.js and TypeScript codebase, built with TypeScript.
+
+See the [open issues](https://github.com/anyingiit/OhMyTodoList/issues) for planned features and known issues.
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+
+### Installation
+
+```sh
+git clone https://github.com/anyingiit/OhMyTodoList.git
+cd OhMyTodoList
 ```
 
-### 构建和运行
+## Usage
 
-```shell
-yarn install
-yarn build
-# TODO 运行服务器
+```sh
+OhMyTodoList --help
 ```
 
-### TODO
+## Contributing
 
-- [ ] 项目介绍, 项目运行截图等
-- [ ] 有关组件main, todoBase以及页面todos/index, todos/[id] 之间的关系
-    - [ ] 使用UML绘制
-- [ ] 页面组成是什么
-- [ ] 项目目录结构是什么
+Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for how to open an issue or a pull request, and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for the standards expected of everyone taking part.
 
-### Notes
+Please do not report security issues in public issues or pull requests. [SECURITY.md](SECURITY.md) explains how to report them privately.
 
-[studyNotes](studyNotes.md)
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Contact
+
+Project link: [https://github.com/anyingiit/OhMyTodoList](https://github.com/anyingiit/OhMyTodoList)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
