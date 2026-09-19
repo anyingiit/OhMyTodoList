@@ -8,6 +8,19 @@
 #     scripts/ci-smoke-test.js, added by repocurator: package.json's own
 #     "test" script is `tsc --watch`, which never exits and so cannot be a CI
 #     step, and there was no other test in the repository.
+#   - `yarn build` failed on every GitHub-hosted Ubuntu image (22.04 and
+#     24.04 alike): next@12.2.1's prebuilt @next/swc-linux-x64-gnu binary
+#     dynamically links libssl.so.1.1, which Ubuntu dropped after 20.04
+#     (retired by GitHub Actions in 2025) -- there is nothing for apt to
+#     install, on this runner or the next one. next falls back to an
+#     on-demand WASM build when the native binary won't load, but its
+#     downloader mis-builds the request URL from this runner's
+#     `npm config get registry` (it produces
+#     `https://registry.yarnpkg.com@next/swc-wasm-nodejs/...`, which resolves
+#     to host `next` and fails DNS), so that fallback failed too. Added the
+#     "Ensure the SWC WASM fallback is present" step below, which installs
+#     the WASM build into node_modules ahead of time so next finds it
+#     directly and never calls that downloader.
 name: CI
 
 on:
@@ -68,6 +81,13 @@ jobs:
 
       - name: Install
         run: yarn install --frozen-lockfile
+
+      - name: Ensure the SWC WASM fallback is present
+        # See the workflow header comment: this runner has no way to satisfy
+        # next@12.2.1's native SWC binary, and next's own on-demand WASM
+        # download is broken on it too. `yarn add` here only touches this
+        # job's node_modules -- nothing is committed back to the repository.
+        run: yarn add --dev @next/swc-wasm-nodejs@12.2.1
 
       - name: Build
         run: yarn build
