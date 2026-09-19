@@ -3,7 +3,9 @@
 
 # OhMyTodoList
 
-Oh my todo list has no README describing its purpose; its manifest (package.json, tsconfig.json, yarn.lock) marks it as a Node.js and TypeScript codebase, built with TypeScript.
+A Next.js and TypeScript to-do list demo that renders sample tasks and users from bundled local JSON files instead of a live backend, built while learning the Next.js src-directory layout, TypeScript, and Tailwind CSS.
+
+**English** · [简体中文](README.zh-CN.md)
 
 [![CI](https://github.com/anyingiit/OhMyTodoList/actions/workflows/ci.yml/badge.svg)](https://github.com/anyingiit/OhMyTodoList/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/anyingiit/OhMyTodoList)](LICENSE)
@@ -24,7 +26,7 @@ Oh my todo list has no README describing its purpose; its manifest (package.json
 
 ## About The Project
 
-Oh my todo list has no README describing its purpose; its manifest (package.json, tsconfig.json, yarn.lock) marks it as a Node.js and TypeScript codebase, built with TypeScript.
+OhMyTodoList is a Next.js 12 application written in TypeScript that lists to-do items next to the users who own them, built from `src/components/main.tsx`, `src/components/todoBase.tsx` and `src/components/list.tsx`. Its data comes from two local JSON files bundled with the repository, `public/todos.json` and `users.json`, which `src/pages/todos/index.tsx` loads with `require(...)`; a call to the JSONPlaceholder API is written in that same file but commented out, so nothing ever leaves the machine it runs on. The project doubles as its author's own Next.js study notes: `src/pages/study/`, `src/readme.md` and `studyNotes.md` record, in Chinese, what was learned about the framework while building it.
 
 See the [open issues](https://github.com/anyingiit/OhMyTodoList/issues) for planned features and known issues.
 
@@ -32,20 +34,24 @@ See the [open issues](https://github.com/anyingiit/OhMyTodoList/issues) for plan
 
 ### Prerequisites
 
-- Git
+- Node.js, to run the `dev`/`build`/`start` scripts declared in `package.json`
+- Yarn, since dependencies are pinned in `yarn.lock` rather than a `package-lock.json`
 
 ### Installation
 
 ```sh
 git clone https://github.com/anyingiit/OhMyTodoList.git
 cd OhMyTodoList
+yarn install
 ```
 
 ## Usage
 
 ```sh
-OhMyTodoList --help
+yarn dev
 ```
+
+This starts the Next.js development server. Visiting the site redirects immediately to `/todos` (`src/pages/index.tsx`), which lists every task from `public/todos.json` next to the name of the user in `users.json` who owns it (`src/pages/todos/index.tsx`). `yarn build` followed by `yarn start` runs the same app from a production build instead.
 
 ## Contributing
 
